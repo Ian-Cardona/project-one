@@ -10,22 +10,20 @@ export function calculateUtilization(
   arrivalRate: number,
   serviceRate: number
 ): number {
-  // TODO: implement
-  throw new Error('Not implemented');
+  return arrivalRate / serviceRate;
 }
 
 export function calculateAverageWait(
   arrivalRate: number,
   serviceRate: number
 ): number {
-  // TODO: implement
-  throw new Error('Not implemented');
+  return 1 / (serviceRate - arrivalRate);
 }
 
 export function calculateAverageQueueLength(
   arrivalRate: number,
   serviceRate: number
 ): number {
-  // TODO: implement
-  throw new Error('Not implemented');
+  const rho = calculateUtilization(arrivalRate, serviceRate);
+  return rho / (1 - rho);
 }
