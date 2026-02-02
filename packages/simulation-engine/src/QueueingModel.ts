@@ -27,3 +27,15 @@ export function calculateAverageQueueLength(
   const rho = calculateUtilization(arrivalRate, serviceRate);
   return rho / (1 - rho);
 }
+
+/**
+ * Calculate the theoretical latency at a given percentile for M/M/1 queue.
+ * Formula: t(p) = -ln(1 - p) / (μ - λ)
+ */
+export function calculatePercentileLatency(
+  arrivalRate: number,
+  serviceRate: number,
+  percentile: number
+): number {
+  return -Math.log(1 - percentile) / (serviceRate - arrivalRate);
+}
