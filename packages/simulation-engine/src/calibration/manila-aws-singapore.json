@@ -1,0 +1,70 @@
+{
+  "route": "manila-aws-singapore",
+  "description": "Manila, Philippines to AWS ap-southeast-1 (Singapore)",
+  "source": "aggregated-benchmarks-2025",
+  "notes": "Values derived from lambda-perf daily benchmarks, AWS case studies, and typical SEA network routing. Suitable for architectural planning and topology comparison.",
+  "lastUpdated": "2025-02",
+  "network": {
+    "description": "Manila to Singapore network path (public internet)",
+    "oneWayLatency": {
+      "mean": 35,
+      "stddev": 5,
+      "unit": "ms"
+    },
+    "packetLoss": 0.001,
+    "sources": [
+      "https://www.kentik.com/blog/announcing-the-cloud-latency-map/",
+      "https://cloudping.info/"
+    ]
+  },
+  "lambda": {
+    "description": "AWS Lambda Node.js/Python runtime, 512MB-1GB memory, no VPC",
+    "coldStart": {
+      "p50": 150,
+      "p95": 250,
+      "p99": 350,
+      "unit": "ms"
+    },
+    "warm": {
+      "p50": 5,
+      "p95": 10,
+      "p99": 15,
+      "unit": "ms"
+    },
+    "coldStartProbability": 0.05,
+    "sources": [
+      "https://maxday.github.io/lambda-perf/",
+      "https://zircon.tech/blog/aws-lambda-cold-start-optimization-in-2025-what-actually-works/"
+    ]
+  },
+  "dynamodb": {
+    "description": "DynamoDB GetItem operation, on-demand capacity",
+    "getItem": {
+      "p50": 4,
+      "p95": 8,
+      "p99": 12,
+      "unit": "ms"
+    },
+    "sources": [
+      "https://aws.amazon.com/blogs/database/how-global-payments-inc-improved-their-tail-latency-using-request-hedging-with-amazon-dynamodb/",
+      "https://dynobase.dev/dynamodb-performance-latency/"
+    ]
+  },
+  "vpn": {
+    "description": "Site-to-site VPN overhead (if applicable)",
+    "additionalLatency": {
+      "mean": 5,
+      "stddev": 2,
+      "unit": "ms"
+    },
+    "sources": []
+  },
+  "directConnect": {
+    "description": "AWS Direct Connect (if applicable)",
+    "latencyReduction": {
+      "percent": 20,
+      "note": "Typically 10-30% lower latency than public internet"
+    },
+    "sources": []
+  }
+}
