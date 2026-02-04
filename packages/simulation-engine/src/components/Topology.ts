@@ -1,5 +1,5 @@
 import { Component } from './Component';
-import { calculatePercentiles } from '../Statistics';
+import { calculatePercentiles } from '../core/Statistics';
 
 export interface TopologyResult {
   p50: number;

@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 import { simulate, SimulationConfig, SimulationResult } from './Simulator';
-import { calculatePercentileLatency } from './QueueingModel';
+import { calculatePercentileLatency } from '../models/QueueingModel';
 
 describe('Simulator', () => {
   describe('basic execution', () => {

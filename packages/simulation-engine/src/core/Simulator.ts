@@ -1,6 +1,6 @@
 import { EventQueue, SimulationEvent } from './EventQueue';
 import { calculatePercentiles } from './Statistics';
-import { calculateUtilization } from './QueueingModel';
+import { calculateUtilization } from '../models/QueueingModel';
 
 export interface SimulationConfig {
   arrivalRate: number;  // λ: requests per second

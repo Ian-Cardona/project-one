@@ -1,5 +1,5 @@
 import { Component } from './Component';
-import { sampleNormal } from '../Probability';
+import { sampleNormal } from '../models/Probability';
 
 export interface NetworkConfig {
   /** Mean one-way latency in seconds */

@@ -1,5 +1,5 @@
 import { Component } from './Component';
-import { sampleNormal } from '../Probability';
+import { sampleNormal } from '../models/Probability';
 
 export interface LambdaConfig {
   /** Mean warm execution latency in seconds */
