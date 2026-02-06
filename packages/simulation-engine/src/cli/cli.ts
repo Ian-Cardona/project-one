@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { simulate } from './Simulator';
-import { calculatePercentileLatency } from './QueueingModel';
+import { simulate } from '../core/Simulator';
+import { calculatePercentileLatency } from '../models/QueueingModel';
 
 const config = {
   arrivalRate: 800,

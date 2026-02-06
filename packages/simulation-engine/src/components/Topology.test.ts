@@ -3,7 +3,7 @@ import { Topology } from './Topology';
 import { NetworkComponent } from './Network';
 import { LambdaComponent } from './Lambda';
 import { DynamoDBComponent } from './DynamoDB';
-import { calculatePercentiles } from '../Statistics';
+import { calculatePercentiles } from '../core/Statistics';
 
 describe('Topology', () => {
   describe('single component', () => {
